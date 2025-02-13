@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import TicketButton from "../components/button";
 import Card from "../components/Card";
 import ProgressHeader from "../components/progressBar";
-import TicketNavBar from "../components/navBar";
+import TicketNavBar from "../components/TicketNavBar";
 import TicketInput from "../components/input";
 import { MdCloudDownload } from "react-icons/md";
 
