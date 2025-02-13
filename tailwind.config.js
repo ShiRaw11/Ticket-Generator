@@ -5,6 +5,9 @@ export default {
     extend: {
       fontFamily: {
         heading: ["Road Rage", "sans-serif"],
+        title:['Jeju Myeongjo', 'serif'],
+        roboto:['Roboto'],
+        alatsi:['Alatsi']
       },
       colors: {
         transparent: 'transparent',
@@ -24,7 +27,8 @@ export default {
         ticket_no_bg:"#082024",
         tickets_no_border:"#14515D",
         tickets_border:"#07373F",
-        drag_bg:"#0E464F"
+        drag_bg:"#0E464F",
+        card_bg:"08252B"
 
       }
     },

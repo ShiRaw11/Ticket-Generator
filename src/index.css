@@ -1,10 +1,9 @@
-
+@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-body{
-  font: Jejumyeongjo;
+:root {
+  --font-title: Times, "Jeju Myeongjo", serif;
 }

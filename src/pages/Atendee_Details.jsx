@@ -52,7 +52,7 @@ const AttendeeDetails = () => {
       const data = await response.json();
       if (response.ok) {
         setFile(data.secure_url);
-        setErrors((prev) => ({ ...prev, file: "" })); // Clear file error
+        setErrors((prev) => ({ ...prev, file: "" }));
       } else {
         console.error("Upload failed:", data.error);
       }
@@ -73,20 +73,20 @@ const AttendeeDetails = () => {
   };
 
   return (
-    <div className="bg-[#02191D] relative w-full flex flex-col items-center">
+    <div className="min-h-screen bg-radial relative flex flex-col">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100vw] h-[50vh] bg-[radial-gradient(ellipse_at_bottom,_rgba(36,160,181,0.2)_0%,_rgba(36,160,181,0)_70%)]"></div>
 
       <div className="w-full flex justify-center py-[12px]">
         <TicketNavBar />
       </div>
 
-      <div className="flex justify-center ">
-        <Card cardStyle={"w-[600px] p-[24px]"}>
-          <ProgressHeader title="Ticket Selection" step={2} />
-          <div className="p-[24px] mt-[12px] bg-ticket_bg border border-tickets_border rounded-3xl">
+      <div className="flex justify-center  w-full min-h-full">
+        <Card cardStyle={" w-[600px] p-[24px] "}>
+          <ProgressHeader title="Attendee Details" step={2} />
+          <div className="p-[24px] mt-[32px] bg-ticket_bg border border-tickets_border rounded-3xl">
             <h2 className="text-white text-lg mb-4">Upload Profile Photo</h2>
             <div
-              className={`relative bg-black bg-opacity-20 my-[32px] flex items-center justify-center border-2 h-[120px] ${
+              className={`relative bg-black bg-opacity-20 my-[32px] flex items-center justify-center  h-[120px] ${
                 isDragging ? "border-teal-500 bg-[#0C3D4A]" : ""
               } rounded-xl cursor-pointer transition-all duration-300`}
               onDragOver={(e) => {
@@ -195,15 +195,16 @@ const AttendeeDetails = () => {
             />
           </div>
 
-          <div className="flex gap-4 items-center m-5 pt-4 ">
+          <div className="w-full flex flex-col-reverse md:flex-row justify-between my-[32px] gap-4 ">
             <TicketButton
               buttonText={"Back"}
-              buttonStyle={"w-[50%] z-10 hover:bg-white text-gradient"}
+              buttonStyle={"w-full md:w-[50%] text-white bg-transparent"}
             />
+
             <TicketButton
               buttonText={"Get my free ticket"}
               buttonStyle={
-                "w-[50%] z-10 bg-gradient text-white hover:bg-white hover:text-gradient"
+                "bg- w-full md:w-[50%]  text-white "
               }
               onClickButtonHandler={handleNext}
             />

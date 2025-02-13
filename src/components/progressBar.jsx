@@ -4,18 +4,18 @@ const ProgressHeader = ({ title, step }) => {
   
     return (
       <div>
-        <div className="flex justify-between mb-2">
-          <h2 className="text-[32px] font-[JejuMyeongjo] font-light text-white">{title}</h2>
+        <div className="flex justify-between items-center mb-2">
+          <h2 className="text-[25px] font-title font-light text-white">{title}</h2>
           <span className="text-white font-light text-[16px] font-[Roboto]">
             Step {step}/{totalSteps}
           </span>
         </div>
-        <div className="w-full bg-gray-700 h-2 rounded-full">
+        
           <div
-            className="bg-teal-500 h-2 rounded-full transition-all duration-300"
+            className="bg-slate h-[4px] rounded-full transition-all duration-300 "
             style={{ width: `${progressPercentage}%` }}
           />
-        </div>
+       
       </div>
     );
   };

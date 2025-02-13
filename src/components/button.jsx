@@ -4,7 +4,7 @@ import { PropTypes } from "prop-types";
 const TicketButton = ({onClickButtonHandler, buttonText, buttonIconRight, buttonIconLeft, buttonType, buttonStyle}) => {
   return (
     <>
-        <button className={`inline-flex font-thin items-center  justify-center gap-4 transition-colors duration-400 ease-in-out bg-transparent px-[16px] font-[JejuMyeongjo] h-[52px] border border-border rounded-xl text-[16px]   outline-offset-2 outline-border hover:outline-none cursor-pointer text-slate ${ buttonStyle ? buttonStyle : ""}`} type={`${buttonType ? buttonType : "button"}`} onClick={onClickButtonHandler}>
+        <button className={`inline-flex font-thin items-center hover:border-gradient justify-center gap-4 transition-colors duration-400 ease-in-out bg-border  hover:text-gradient px-[16px] font-title h-[52px] border border-gradient rounded-xl text-[16px] outline-offset-2 outline-border   cursor-pointer hover:bg-white ${ buttonStyle ? buttonStyle : ""}`} type={`${buttonType ? buttonType : "button"}`} onClick={onClickButtonHandler}>
             {buttonIconLeft}
             {buttonText}
             {buttonIconRight}
@@ -20,7 +20,7 @@ TicketButton.propTypes = {
   buttonIconLeft: PropTypes.element,
   buttonType: PropTypes.string,
   buttonStyle: PropTypes.string,
-  to: PropTypes.string
+  
 }
 
 export default TicketButton

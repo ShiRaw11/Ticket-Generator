@@ -15,7 +15,7 @@ export default function TicketReady() {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const downloadTicket = () => {
-    setTimeout(() => { 
+    setTimeout(() => {
       html2canvas(ticketRef.current, { scale: 2, useCORS: true })
         .then((canvas) => {
           const link = document.createElement("a");
@@ -24,10 +24,9 @@ export default function TicketReady() {
           link.click();
         })
         .catch((error) => console.error("Error capturing ticket:", error));
-    }, 1000); 
+    }, 1000);
   };
 
-  
   useEffect(() => {
     const storedData = localStorage.getItem("eventDetails");
     if (storedData) {
@@ -37,7 +36,7 @@ export default function TicketReady() {
 
   useEffect(() => {
     const attendeeData = localStorage.getItem("attendeeDetails");
-    console.log(attendeeData)
+    console.log(attendeeData);
     if (attendeeData) {
       setAttendee(JSON.parse(attendeeData));
     }
@@ -54,11 +53,9 @@ export default function TicketReady() {
 
   if (!attendee) {
     return <p className="text-white">No attendee details found.</p>;
-    
   }
 
   console.log("Ticket Details:", ticketDetails);
-
 
   return (
     <div className="min-h-screen bg-radial relative flex flex-col">
@@ -68,28 +65,30 @@ export default function TicketReady() {
         <TicketNavBar />
       </div>
 
-      <div className="flex justify-center  w-full min-h-full">
+      <div className="flex justify-center  w-full  md:m-0 min-h-full">
         <Card
-          cardStyle={" w-[600px] p-[24px] border-none"}
+          cardStyle={" w-full md:border-none m-[48px] p-[24px]  "}
           children={
             <>
               <div>
-                <ProgressHeader title="Ticket" step={3} />
+                <ProgressHeader title="Ready" step={3} />
               </div>
 
-              <div className="w-full  flex flex-col justify-center items-center">
-                <div className="card w-[400px] flex justify-center items-center ">
-                  <div className=" bg-radial-gradient w-full ">
-                    <div className="mt-3 gap-2 text-white w-full  flex flex-col justify-center items-center">
-                      <h1 className="text-[32px] font-semibold ">
-                        Your Ticket is Booked!
-                      </h1>
-                      <p className="text-[14px] text-gray">
-                        Check your email for a copy or you can{" "}
-                        <strong> download</strong>
-                      </p>
-                    </div>
-                    <div className="ticket w-full bg-radial" ref={ticketRef}>
+              <div className="w-full flex flex-col items-center">
+  <div className="card w-[400px] flex flex-col justify-center items-center overflow-hidden">
+    <div className="bg-radial-gradient w-full">
+      <div className="mt-[24px] gap-2 text-white w-full flex flex-col justify-center items-center">
+        <h1 className="text-[35px] font-semibold font-alatsi">
+          Your Ticket is Booked!
+        </h1>
+        <p className="text-[14px] text-gray">
+          Check your email for a copy or you can{" "}
+          <a className="cursor-pointer">
+            <strong>download</strong>
+          </a>
+        </p>
+      </div>
+      <div className="ticket w-[90%] mx-auto bg-radial mt-[32px]" ref={ticketRef}>
                       <div className="ticket--start">
                         <div className="m-[15px] w-[90%]  border border-border rounded-xl p-3">
                           <div className=" flex flex-col justify-center items-center ">
@@ -97,7 +96,7 @@ export default function TicketReady() {
                               {event.name}
                             </h1>
                             <p className="text-white text-sm6 px-4">
-                            {event.location} 
+                              {event.location}
                             </p>
                             <p className="text-gray text-sm mt-2">
                               {event.date} | {event.time}
@@ -108,49 +107,54 @@ export default function TicketReady() {
                             <div className="border border-4 border-border rounded-lg border-opacity-50 w-[140px] h-[140px]">
                               {attendee.file && (
                                 <img
-                                src={attendee.file}
-                                alt="Uploaded"
-                                className="w-full h-full object-cover rounded-lg"
-                                onLoad={() => setImageLoaded(true)} 
-                              />
-                              
+                                  src={attendee.file}
+                                  alt="Uploaded"
+                                  className="w-full h-full object-cover rounded-lg"
+                                  onLoad={() => setImageLoaded(true)}
+                                />
                               )}
                             </div>
                           </div>
                           <div className="bg-[#08343C]  bg-opacity-50 p-4 rounded-lg border border-[#133D44] w-full mt-5 pt-2">
                             <div className="grid grid-cols-2 gap-4 text-sm text-white border-b border-[#2a4f58] pb-2">
                               <div className="border-r border-[#2a4f58] pr-2">
-                                <p className="text-gray text-[12]">Enter your name</p>
-                                <p className="font-bold text-[14px] py-1 ">{attendee.name}</p>
+                                <p className="text-gray text-[12]">
+                                  Enter your name
+                                </p>
+                                <p className="font-bold text-[14px] py-1 ">
+                                  {attendee.name}
+                                </p>
                               </div>
                               <div className="pl-2">
                                 <p className="text-gray text-[12]">
                                   Enter your email *
                                 </p>
-                                <p className="font-bold text-[14px] py-1">{attendee.email}</p>
+                                <p className="font-bold text-[14px] py-1">
+                                  {attendee.email}
+                                </p>
                               </div>
                             </div>
 
                             <div className="grid grid-cols-2 gap-4 text-sm text-white border-b border-[#2a4f58] py-2">
                               <div className="border-r border-[#2a4f58] pr-2">
-                                <p className="text-gray text-[12]">Ticket Type:</p>
-                                <p className="py-1">
-                                  {ticketDetails.type}
+                                <p className="text-gray text-[12]">
+                                  Ticket Type:
                                 </p>
+                                <p className="py-1">{ticketDetails.type}</p>
                               </div>
                               <div className="pl-2">
-                                <p className="text-gray text-[12]">Ticket for:</p>
-                                <p className="py-1">
-                                  {ticketDetails.count}
+                                <p className="text-gray text-[12]">
+                                  Ticket for:
                                 </p>
+                                <p className="py-1">{ticketDetails.count}</p>
                               </div>
                             </div>
 
                             <div className="text-sm text-white pt-2">
-                              <p className="text-gray text-[12] ">Special request?</p>
-                              <p>
-                                {attendee.specialRequest}
+                              <p className="text-gray text-[12] ">
+                                Special request ?
                               </p>
+                              <p>{attendee.specialRequest}</p>
                             </div>
                           </div>
                         </div>
@@ -162,21 +166,19 @@ export default function TicketReady() {
                         </div>
                       </div>
                     </div>
-                    
                   </div>
-                  
                 </div>
-                <div className="w-[100%] flex justify-between mt-5 ">
-                      <TicketButton
-                        buttonText={"Book Another Ticket"}
-                        buttonStyle={"w-[40%]"}
-                      />
-                      <TicketButton
-                        buttonText={"Download Ticket"}
-                        buttonStyle={"bg-white w-[40%]"}
-                        onClickButtonHandler={downloadTicket}
-                      />
-                    </div>
+                <div className="w-full flex flex-col-reverse md:flex-row justify-between m-[32px] gap-4">
+                  <TicketButton
+                    buttonText={"Book Another Ticket"}
+                    buttonStyle={"w-full md:w-[50%] text-white bg-transparent"}
+                  />
+                  <TicketButton
+                    buttonText={"Download Ticket"}
+                    buttonStyle=" w-full md:w-[50%]  text-white "
+                    onClickButtonHandler={downloadTicket}
+                  />
+                </div>
               </div>
             </>
           }

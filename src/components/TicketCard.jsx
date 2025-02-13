@@ -20,21 +20,21 @@ const TicketSelection = ({ onSelect }) => {
   };
 
   return (
-    <div className="flex gap-4  bg-ticket_bg  ">
+    <div className=" flex flex-col md:flex-row md:gap-4 gap-6 bg-ticket_bg  ">
       {tickets.map((ticket) => (
         <button
           key={ticket.type}
           onClick={() => handleSelect(ticket.type)}
-          className={`w-[170px] py-6 border-2 flex justify-start flex-col px-3 rounded-lg transition-all text-white 
+          className={`md:w-[170px] w-full md:py-6 border-2 p-3 flex justify-start flex-col md:px-3 rounded-lg transition-all text-white 
             ${
               selected === ticket.type
                 ? "bg-ticket_selected text-white border-ticket_border" 
                 : "bg-transparent border-ticket_border hover:bg-ticket_hover " 
             }`}
         >
-          <h2 className="text-[20px] font-semibold">{ticket.price}</h2>
-          <p className="text-[14px]">{ticket.access}</p>
-          <p className="text-[14px]">{ticket.available}</p>
+          <h2 className="text-[20px] font-semibold p-1">{ticket.price}</h2>
+          <p className="text-[12px] text-gray">{ticket.access}</p>
+          <p className="text-[14px] p-1">{ticket.available}</p>
         </button>
       ))}
     </div>
