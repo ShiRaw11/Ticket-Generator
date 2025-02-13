@@ -1,0 +1,118 @@
+.ticket {
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto;
+    margin: 16px;
+    border: 1px solid #24A0B5;
+    position: relative;
+  }
+  .ticket:before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    background-color: #02191D;
+    border: 1px solid #24A0B5;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    transform: rotate(-42deg);
+    left: -16px;
+    top: -2px;
+    margin-top: -16px;
+    border-radius: 50%;
+    
+  }
+  .ticket:after {
+    content: "";
+    width: 32px;
+    height: 32px;
+    background-color: #02191D;
+    border: 1px solid #24A0B5;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    position: absolute;
+    transform: rotate(132deg);
+    right: -16px;
+    top: -2px;
+    margin-top: -16px;
+    border-radius: 50%;
+  }
+  .ticket--start {
+    position: relative;
+    border-bottom: 2px dotted #006888;
+  }
+  .ticket--start:before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    background-color: #052429;
+    border: 1px solid #24A0B5;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    transform: rotate(45deg);
+    right: -17px;
+    top: 100%;
+    margin-top: -16px;
+    border-radius: 50%;
+  }
+  .ticket--start:after {
+    content: "";
+    width: 32px;
+    height: 32px;
+    background-color: #052429;;
+    background-blend-mode: color;
+    border: 1px solid #24A0B5;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    
+    position: absolute;
+    transform: rotate(-45deg);
+    left: -17px;
+    top: 100%;
+    margin-top: -16px;
+    border-radius: 50%;
+  }
+
+  .ticket--end {
+    padding: 24px;
+    flex: 1;
+  }
+  
+  
+  .ticket--end:before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    background-color: #072C31;
+    border: 1px solid #24A0B5;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    position: absolute;
+    transform: rotate(48deg);
+    left: -18px;
+    top: 100%;
+    margin-top: -16px;
+    border-radius: 50%;
+  }
+  
+  .ticket--end:after {
+    content: "";
+    width: 32px;
+    height: 32px;
+    background-color: #072C31;
+    border: 1px solid #24A0B5;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    position: absolute;
+    transform: rotate(-48deg);
+    right: -18px;
+    top: 100%;
+    margin-top: -16px;
+    border-radius: 50%;
+  }
+  
