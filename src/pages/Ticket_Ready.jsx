@@ -1,5 +1,5 @@
 import React from "react";
-import TicketNavBar from "../components/navBar";
+import TicketNavBar from "../components/TicketNavBar";
 import Card from "../components/Card";
 import ProgressHeader from "../components/progressBar";
 import "../trial.css";

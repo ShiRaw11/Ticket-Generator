@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import TicketNavBar from "../components/navBar";
+import TicketNavBar from "../components/TicketNavBar";
 import Card from "../components/Card";
 import TicketSelection from "../components/TicketCard";
 import TicketButton from "../components/button";
 import ProgressHeader from "../components/progressBar";
-import { IoMdClose } from "react-icons/io";
 
 function SelectTicket() {
   const [selectedTicket, setSelectedTicket] = useState(null);
