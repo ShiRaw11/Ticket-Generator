@@ -5,6 +5,7 @@ import SelectTicket from "./pages/SelectTicket";
 import AttendeeDetails from "./pages/Atendee_Details";
 import TicketReady from "./pages/Ticket_Ready";
 import AboutProject from "./pages/AboutProject";
+
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
