@@ -58,9 +58,9 @@ export default function TicketReady() {
     return <p className="text-white">No attendee details found.</p>;
   }
 
-  const handleBack=()=>{
-    navigate('/')
-  }
+  const handleBack = () => {
+    navigate("/");
+  };
 
   return (
     <div className="min-h-screen bg-radial relative flex flex-col">
@@ -80,20 +80,23 @@ export default function TicketReady() {
               </div>
 
               <div className="w-full flex flex-col items-center">
-  <div className="card w-[400px] flex flex-col justify-center items-center overflow-hidden">
-    <div className="bg-radial-gradient w-full">
-      <div className="mt-[24px] gap-2 text-white w-full flex flex-col justify-center items-center">
-        <h1 className="text-[35px] font-semibold font-alatsi">
-          Your Ticket is Booked!
-        </h1>
-        <p className="text-[14px] text-gray">
-          Check your email for a copy or you can{" "}
-          <a className="cursor-pointer">
-            <strong>download</strong>
-          </a>
-        </p>
-      </div>
-      <div className="ticket w-[90%] mx-auto bg-radial mt-[32px]" ref={ticketRef}>
+                <div className="card w-[400px] flex flex-col justify-center items-center overflow-hidden">
+                  <div className="bg-radial-gradien w-full">
+                    <div className="mt-[24px] gap-2 text-white w-full flex flex-col justify-center items-center">
+                      <h1 className="text-[35px] font-semibold font-alatsi">
+                        Your Ticket is Booked!
+                      </h1>
+                      <p className="text-[14px] text-gray">
+                        Check your email for a copy or you can{" "}
+                        <a className="cursor-pointer">
+                          <strong>download</strong>
+                        </a>
+                      </p>
+                    </div>
+                    <div
+                      className="ticket w-[90%] mx-auto bg-radial mt-[32px]"
+                      ref={ticketRef}
+                    >
                       <div className="ticket--start">
                         <div className="m-[15px] w-[90%]  border border-border rounded-xl p-3">
                           <div className=" flex flex-col justify-center items-center ">
@@ -120,9 +123,9 @@ export default function TicketReady() {
                               )}
                             </div>
                           </div>
-                          <div className="bg-[#08343C]  bg-opacity-50 p-4 rounded-lg border border-[#133D44] w-full mt-5 pt-2">
-                            <div className="grid grid-cols-2 gap-4 text-sm text-white border-b border-[#2a4f58] pb-2">
-                              <div className="border-r border-[#2a4f58] pr-2">
+                          <div className="bg-detail_bg  bg-opacity-50 p-4 rounded-lg border border-[#133D44] w-full mt-5 pt-2">
+                            <div className="grid grid-cols-2 gap-4 text-sm text-white border-b border-input_border pb-2">
+                              <div className="border-r border-input_border pr-2">
                                 <p className="text-gray text-[12]">
                                   Enter your name
                                 </p>
@@ -140,8 +143,8 @@ export default function TicketReady() {
                               </div>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4 text-sm text-white border-b border-[#2a4f58] py-2">
-                              <div className="border-r border-[#2a4f58] pr-2">
+                            <div className="grid grid-cols-2 gap-4 text-sm text-white border-b border-input_border py-2">
+                              <div className="border-r border-input_border pr-2">
                                 <p className="text-gray text-[12]">
                                   Ticket Type:
                                 </p>
@@ -176,12 +179,14 @@ export default function TicketReady() {
                 <div className="w-full flex flex-col-reverse md:flex-row justify-between m-[32px] gap-4">
                   <TicketButton
                     buttonText={"Book Another Ticket"}
-                    buttonStyle={"w-full md:w-[50%] text-white bg-transparent"}
+                    buttonStyle={
+                      "w-full md:w-[50%] text-gradien bg-transparent border border-gradien"
+                    }
                     onClickButtonHandler={handleBack}
                   />
                   <TicketButton
                     buttonText={"Download Ticket"}
-                    buttonStyle=" w-full md:w-[50%]  text-white "
+                    buttonStyle=" w-full md:w-[50%] bg-gradien text-white border border-gradien"
                     onClickButtonHandler={downloadTicket}
                   />
                 </div>

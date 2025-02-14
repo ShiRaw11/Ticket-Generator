@@ -42,7 +42,7 @@ function SelectTicket() {
 
   return (
     <div className="min-h-screen bg-radial relative flex flex-col gap-[32px]">
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100vw] h-[50vh] bg-[radial-gradient(ellipse_at_bottom,_rgba(36,160,181,0.2)_0%,_rgba(36,160,181,0)_70%)]"></div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100vw] h-[50vh] bg-[radial-gradien(ellipse_at_bottom,_rgba(36,160,181,0.2)_0%,_rgba(36,160,181,0)_70%)]"></div>
 
       <div className="w-full flex justify-center py-[12px]">
         <TicketNavBar />
@@ -50,7 +50,7 @@ function SelectTicket() {
 
       <div className="flex justify-center w-full min-h-full ">
         <Card
-          cardStyle={" w-[450px] md:w-[600px] p-[24px] mx-[30px]  "}
+          cardStyle={" w-[450px] md:w-[600px] p-[24px] "}
           children={
             <div>
               <ProgressHeader title="Ticket Selection" step={1} />
@@ -63,7 +63,7 @@ function SelectTicket() {
                       className="w-[400px] flex flex-col items-center justify-center backdrop-blur-xl p-1 text-center"
                       style={{
                         background:
-                          "radial-gradient(50% 50% at 40% 50%, rgba(36, 160, 181, 0.2) 0%, rgba(36, 160, 181, 0) 100%), rgba(10, 12, 17, 0.1)",
+                          "radial-gradien(50% 50% at 40% 50%, rgba(36, 160, 181, 0.2) 0%, rgba(36, 160, 181, 0) 100%), rgba(10, 12, 17, 0.1)",
                       }}
                     >
                       <div className="w-full  flex flex-col items-center">
@@ -133,11 +133,11 @@ function SelectTicket() {
                 <div className="w-full flex flex-col md:flex-row justify-between my-[32px] gap-4">
                   <TicketButton
                     buttonText="Cancel"
-                    buttonStyle="w-full md:w-[50%] text-white bg-transparent"
+                    buttonStyle="w-full md:w-[50%] text-gradien bg-transparent"
                   />
                   <TicketButton
                     buttonText="Next"
-                    buttonStyle=" w-full md:w-[50%]  text-white "
+                    buttonStyle=" w-full md:w-[50%]  text-white bg-gradien hover:bg-white hover:text-black "
                     onClickButtonHandler={handleNext}
                   />
                 </div>

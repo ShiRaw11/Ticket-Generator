@@ -10,8 +10,10 @@ function TicketInput({
   inputStyle,
 }) {
   return (
-    <div className="relative z-10"> 
-      <label className={`block py-4 text-white ${labelStyle ? labelStyle : ""}`}>
+    <div className="relative z-10">
+      <label
+        className={`block py-4 text-white ${labelStyle ? labelStyle : ""}`}
+      >
         {label}
       </label>
       {inputType === "textarea" ? (
@@ -33,7 +35,7 @@ function TicketInput({
           key={index}
           type={inputType}
           value={value}
-          className={`block px-[12px] h-[40px] rounded-lg   w-full
+          className={`block px-[12px] h-[50px] rounded-lg   w-full
           bg-transparent border border-tickets_border shadow-md cursor-text hover:bg-radial 
           focus:border-slate focus:outline-none text-white relative z-10 ${
             inputStyle ? inputStyle : ""

@@ -4,14 +4,19 @@ const TicketSelection = ({ onSelect }) => {
   const [selected, setSelected] = useState(null);
 
   const tickets = [
-    { type: "Free", price: "Free", access: "REGULAR ACCESS", available: "20/52" },
+    {
+      type: "Free",
+      price: "Free",
+      access: "REGULAR ACCESS",
+      available: "20/52",
+    },
     { type: "VIP", price: "$150", access: "VIP ACCESS", available: "20/52" },
     { type: "VVIP", price: "$150", access: "VVIP ACCESS", available: "20/52" },
   ];
 
   const handleSelect = (type) => {
     if (selected === type) {
-      setSelected(null); 
+      setSelected(null);
       onSelect(null);
     } else {
       setSelected(type);
@@ -28,8 +33,8 @@ const TicketSelection = ({ onSelect }) => {
           className={`md:w-[170px] w-full md:py-6 border-2 p-3 flex justify-start flex-col md:px-3 rounded-lg transition-all text-white 
             ${
               selected === ticket.type
-                ? "bg-ticket_selected text-white border-ticket_border" 
-                : "bg-transparent border-ticket_border hover:bg-ticket_hover " 
+                ? "bg-ticket_selected text-white border-ticket_border"
+                : "bg-transparent border-ticket_border hover:bg-ticket_hover "
             }`}
         >
           <h2 className="text-[20px] font-semibold p-1">{ticket.price}</h2>
