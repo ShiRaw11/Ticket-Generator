@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import Links from "../components/Links";
-import TicketButton from "./button";
+import TicketButton from "../components/button";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 

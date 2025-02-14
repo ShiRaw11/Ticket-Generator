@@ -7,7 +7,10 @@ import { useState, useEffect, useRef } from "react";
 import html2canvas from "html2canvas";
 import barcode from "../assets/barcode.png";
 import TicketButton from "../components/button";
+import { useNavigate } from "react-router-dom";
+
 export default function TicketReady() {
+  const navigate = useNavigate();
   const ticketRef = useRef(null);
   const [event, setEvent] = useState(null);
   const [attendee, setAttendee] = useState(null);
@@ -55,11 +58,13 @@ export default function TicketReady() {
     return <p className="text-white">No attendee details found.</p>;
   }
 
-  console.log("Ticket Details:", ticketDetails);
+  const handleBack=()=>{
+    navigate('/')
+  }
 
   return (
     <div className="min-h-screen bg-radial relative flex flex-col">
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100vw] h-[50vh] bg-[radial-gradient(ellipse_at_bottom,_rgba(36,160,181,0.2)_0%,_rgba(36,160,181,0)_70%)]"></div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100vw] h-[50vh] bg-[radial-(ellipse_at_bottom,_rgba(36,160,181,0.2)_0%,_rgba(36,160,181,0)_70%)]"></div>
 
       <div className="w-full flex justify-center py-[12px]">
         <TicketNavBar />
@@ -172,6 +177,7 @@ export default function TicketReady() {
                   <TicketButton
                     buttonText={"Book Another Ticket"}
                     buttonStyle={"w-full md:w-[50%] text-white bg-transparent"}
+                    onClickButtonHandler={handleBack}
                   />
                   <TicketButton
                     buttonText={"Download Ticket"}

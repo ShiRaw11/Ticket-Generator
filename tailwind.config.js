@@ -16,7 +16,7 @@ export default {
         white:'#FFFFFF',
         red: '#de3618',
         radial:'#02191D',
-        gradient:'#24A0B5',
+        gradien:'#24A0B5',
         gray:'#B3B3B3',
         slate:"#197686",
         border:"#24A0B5",

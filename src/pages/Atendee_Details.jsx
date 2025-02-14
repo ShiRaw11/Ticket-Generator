@@ -72,6 +72,9 @@ const AttendeeDetails = () => {
     navigate("/ticket");
   };
 
+  const handleBack=()=>{
+    navigate('/')
+  }
   return (
     <div className="min-h-screen bg-radial relative flex flex-col">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100vw] h-[50vh] bg-[radial-gradient(ellipse_at_bottom,_rgba(36,160,181,0.2)_0%,_rgba(36,160,181,0)_70%)]"></div>
@@ -199,6 +202,7 @@ const AttendeeDetails = () => {
             <TicketButton
               buttonText={"Back"}
               buttonStyle={"w-full md:w-[50%] text-white bg-transparent"}
+              onClickButtonHandler={handleBack}
             />
 
             <TicketButton
