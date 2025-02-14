@@ -41,16 +41,15 @@ function SelectTicket() {
   };
 
   return (
-    <div className="min-h-screen bg-radial relative flex flex-col gap-[32px]">
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100vw] h-[50vh] bg-[radial-gradien(ellipse_at_bottom,_rgba(36,160,181,0.2)_0%,_rgba(36,160,181,0)_70%)]"></div>
-
-      <div className="w-full flex justify-center py-[12px]">
-        <TicketNavBar />
-      </div>
-
-      <div className="flex justify-center w-full min-h-full ">
-        <Card
-          cardStyle={" w-[450px] md:w-[600px] p-[24px] "}
+     <div className="min-h-screen bg-radial relative flex flex-col">
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100vw] h-[50vh] bg-[radial-gradien(ellipse_at_bottom,_rgba(36,160,181,0.2)_0%,_rgba(36,160,181,0)_70%)]"></div>
+    
+          <div className="w-full flex justify-center py-[12px]">
+            <TicketNavBar />
+          </div>
+    
+          <div className="flex justify-center  w-full min-h-full">
+            <Card cardStyle={" w-[450px] md:w-[600px] p-[24px] m-[32px]"}
           children={
             <div>
               <ProgressHeader title="Ticket Selection" step={1} />
