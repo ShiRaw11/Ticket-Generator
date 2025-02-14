@@ -71,7 +71,7 @@ export default function TicketReady() {
           </div>
     
           <div className="flex justify-center  w-full min-h-full">
-            <Card cardStyle={" w-[400px] md:w-[600px] p-[24px] m-[32px]"}
+             <Card cardStyle={" w-[400px] md:w-[600px] p-[24px] md:m-[32px] m-[24px]"}
           children={
             <>
               <div>

@@ -11,10 +11,9 @@ export default function AboutProject() {
         <TicketNavBar />
       </div>
       <div className="flex justify-center  w-full min-h-full">
-        <Card
-          cardStyle={
-            " w-[450px] md:w-[600px] p-[24px] m-[32px] text-white font-roboto text-[14px]"
-          }
+        
+
+           <Card cardStyle={" w-[400px] md:w-[600px] p-[24px] md:m-[32px] m-[24px] font-roboto text-[14px] text-white"}
           children={
             <div className="p-[24px]">
               <h1 className="text-2xl font-bold mb-4 ">
