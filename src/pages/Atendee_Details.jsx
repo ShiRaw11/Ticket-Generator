@@ -84,7 +84,9 @@ const AttendeeDetails = () => {
       </div>
 
       <div className="flex justify-center  w-full min-h-full">
-        <Card cardStyle={" w-[420px] md:w-[600px] p-[24px] m-[32px]"}>
+         <Card cardStyle={" w-[400px] md:w-[600px] p-[24px] m-[32px] "}
+        children={
+          <>
           <ProgressHeader title="Attendee Details" step={2} />
           <div className="p-[24px] mt-[32px] bg-ticket_bg border border-tickets_border rounded-3xl">
             <h2 className="text-white text-lg mb-4">Upload Profile Photo</h2>
@@ -215,7 +217,9 @@ const AttendeeDetails = () => {
               onClickButtonHandler={handleNext}
             />
           </div>
-        </Card>
+          </>
+        }
+        />
       </div>
     </div>
   );
